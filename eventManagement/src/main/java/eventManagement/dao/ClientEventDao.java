@@ -48,7 +48,7 @@ public class ClientEventDao {
 	
 	public ClientEvent updateClientEvent(ClientEvent clientEvent ,int id) {
 		EntityManager em = getEntityManager();
-		EntityTransaction et = getEntityTransaction();
+		EntityTransaction et = em.getTransaction();
 		ClientEvent exClientEvent = em.find(ClientEvent.class, id);
 		if(exClientEvent != null ) {
 			exClientEvent.setClientEventId(exClientEvent.getClientEventId());
